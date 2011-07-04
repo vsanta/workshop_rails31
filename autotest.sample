@@ -1,0 +1,7 @@
+require "autotest/fsevent"
+
+Autotest.add_hook :initialize do |t|
+  t.add_mapping(/^spec\/.*spec\.rb$/) do | filename, _|
+    filename
+  end
+end
