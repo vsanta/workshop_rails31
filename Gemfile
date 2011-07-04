@@ -25,6 +25,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem "autotest-rails"
   gem "autotest-notification"
+  gem "autotest-fsevent"
 
 end
 
