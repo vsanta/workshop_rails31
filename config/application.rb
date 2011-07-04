@@ -38,5 +38,15 @@ module Workshop
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    #Customize generators
+    config.generator do | g|
+      g.helper false
+      g.layout false
+      g.assets false
+      g.stylesheets false
+      g.controller_specs false
+      g.routing_specs false
+      g.view_specs false
+    end
   end
 end
