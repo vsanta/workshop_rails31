@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe "Posts" do
   describe "on create" do
-    it "should succeed", :driver => :selenium do
+    # send a hash after "it" to specify driver. Ex:  :driver => :selenium
+    it "should succeed" do
       visit posts_path
       click_link "New Post"
 
