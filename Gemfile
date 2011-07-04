@@ -20,6 +20,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara', '~> 1.0.0'
 end
 
 # Use unicorn as the web server
