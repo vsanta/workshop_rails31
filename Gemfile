@@ -23,6 +23,8 @@ group :development, :test do
   gem 'capybara', '~> 1.0.0'
   gem 'factory_girl', '~> 1.3.3'
   gem 'factory_girl_rails'
+  gem "autotest-rails"
+  gem "autotest-notification"
 
 end
 
