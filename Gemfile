@@ -27,6 +27,8 @@ group :development, :test do
   gem "autotest-rails"
   gem "autotest-notification"
   gem "autotest-fsevent"
+  gem "launchy"
+  gem "hermes", "~> 0.4.1"
 
 end
 
