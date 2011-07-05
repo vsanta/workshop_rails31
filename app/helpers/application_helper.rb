@@ -10,4 +10,8 @@ module ApplicationHelper
     end
     message
   end
+
+  def js text
+    "\"#{escape_javascript(text)}\"".html_safe
+  end
 end
