@@ -4,11 +4,12 @@ gem 'rails', '3.1.0.rc4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+# gem "oily_png" - "chunck_png"
 gem 'sqlite3'
 
 gem 'responders', "~> 0.6.4"
 gem 'simple_form', '~> 1.4.2'
+gem 'compass', :git => "http://github.com/chriseppstein/compass.git", :branch => "rails31"
 
 # Asset template engines
 gem 'json'
