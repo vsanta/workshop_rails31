@@ -18,6 +18,8 @@ gem 'coffee-script'
 gem 'uglifier'
 
 gem 'jquery-rails'
+#to run javascript
+gem "therubyracer", :require => "v8"
 
 group :development, :test do
   gem 'rspec-rails'
