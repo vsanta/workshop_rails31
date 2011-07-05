@@ -5,7 +5,10 @@ gem 'rails', '3.1.0.rc4'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem "sqlite3"
+gem "mongoid", "~> 2.0"
+gem "bson_ext", "~> 1.3"
+gem "SystemTimer", "~> 1.2.0"
 
 gem 'responders', "~> 0.6.4"
 gem 'simple_form', '~> 1.4.2'
@@ -26,6 +29,7 @@ group :development, :test do
   gem "autotest-rails"
   gem "autotest-notification"
   gem "autotest-fsevent"
+  gem 'database_cleaner'
 
 end
 
