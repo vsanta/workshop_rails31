@@ -1,0 +1,15 @@
+#flash_notice,
+#flash_alert {
+  border: 1px solid #CCC;
+  padding: 10px;
+}
+
+#flash_notice {
+  background: #9D9;
+  border-color: #6B6;
+}
+
+#flash_alert {
+  background: #D99;
+  border-color: #B66;
+}
