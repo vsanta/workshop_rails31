@@ -1,9 +1,10 @@
 Factory.define :post do |p|
   p.title "First post"
   p.body "very short body"
+  p.association :user
 end
 
-#using sequence on email to make sure we wont have problems in teste
+#using sequence on email to make sure we wont have problems in test
 # since email is unique on db
 Factory.define :user do |u|
   u.name  "Test"
