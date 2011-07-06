@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = current_user.posts.build(params[:post])
-    @post.save
+    build_attachments(@post) unless @post.save
     respond_with(@post)
   end
 

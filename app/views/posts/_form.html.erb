@@ -11,7 +11,12 @@
       <%= f.simple_fields_for :attachments do |a| %>
         <div class="attachment_form">
           <%= a.input :name%>
-          <%= a.input :attachment%>
+          <%if a.object.attachment? %>
+            <%= link_to a.object.available_name, a.object.attachment_url%>
+          <% else %>
+            <%= a.input :attachment%>
+          <% end %>
+            <%= a.input :attachment_cache, :as => "hidden"%>
         </div>
       <% end %>
     </div>

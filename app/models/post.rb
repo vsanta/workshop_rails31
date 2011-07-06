@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   validate :user_id_is_present
 
   scope :recent, order("created_at DESC")
-  accepts_nested_attributes_for :attachments
+  accepts_nested_attributes_for :attachments, :reject_if => :all_blank
 
   def is_author?(author)
     author && self.user == author

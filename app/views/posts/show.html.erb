@@ -8,6 +8,13 @@
   <b>Body:</b>
   <%= @post.body %>
 </p>
+<h3>Attachments</h3>
+
+<ul>
+  <% @post.attachments.each do |attachment| %>
+    <li><%= link_to attachment.name, attachment.attachment.url %></li>
+  <% end %>
+</ul>
 
 <h3>Comments</h3>
 <div id="comments">
