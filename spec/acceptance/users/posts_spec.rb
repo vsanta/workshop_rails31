@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Posts" do
+describe "[Users] Posts" do
   describe "on create" do
     # send a hash after "it" to specify driver. Ex:  :driver => :selenium
     it "should succeed" do

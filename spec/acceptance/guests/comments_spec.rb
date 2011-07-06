@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Comments" do
+describe "[Guests] Comments" do
   before :each do
     @post = Factory(:post)
   end
