@@ -3,4 +3,6 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<% if @post.is_author? current_user %>
+  <%= link_to 'Back', posts_path %>
+<% end %>

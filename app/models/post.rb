@@ -4,6 +4,9 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :body
   validate :user_id_is_present
 
+  def is_author?(author)
+    author && self.user == author
+  end
   private
 
   def user_id_is_present

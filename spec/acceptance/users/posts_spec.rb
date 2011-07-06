@@ -29,4 +29,49 @@ describe "[Users] Posts" do
       page.should have_content "Some errors were found, please take a look:"
     end
   end
+
+  describe "on update" do
+    before(:each) do
+      @post = Factory.create(:post, :user=> @user)
+    end
+    it "should succeed" do
+      visit edit_post_path @post
+
+      fill_in "Title", :with => "another post"
+      fill_in "Body", :with => "another very short post"
+      click_button "Update Post"
+
+      page.should have_content "another post"
+      @post.reload.body.should == "another very short post"
+    end
+
+    describe "works only for post author" do
+      before(:each) do
+         @another_post = Factory.create(:post)
+      end
+      it "should not allow direct url access" do
+        expect {
+          visit edit_post_path @another_post
+        }.to raise_error ActiveRecord::RecordNotFound
+      end
+      it "should not have edit link on post show" do
+        visit post_path  @another_post
+        page.should have_content "Edit"
+      end
+      it "should not have edit link on post list" do
+        visit posts_path
+        # accessing the post @post created by @user.
+        within @post do
+          page.should have_content "Edit"
+          page.should have_content "Destroy"
+        end
+        #post by someonelse
+        within @another_post do
+          page.should_not have_content "Edit"
+          page.should_not have_content "Destroy"
+        end
+      end
+
+    end
+  end
 end
