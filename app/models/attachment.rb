@@ -1,3 +1,5 @@
 class Attachment < ActiveRecord::Base
   belongs_to :post
+
+  validates_presence_of :name, :attachment
 end
