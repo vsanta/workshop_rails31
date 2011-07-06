@@ -4,9 +4,10 @@
   <%= f.error_notification %>
 
   <div class="inputs">
-    <%= f.input :email, :autofocus => true %>
-    <%= f.input :password %>
-    <%= f.input :password_confirmation %>
+    <%= f.input :name, :autofocus => true %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
   </div>
 
   <div class="actions">
