@@ -7,6 +7,8 @@ gem 'rails', '3.1.0.rc4'
 # gem "oily_png" - "chunck_png"
 gem 'sqlite3'
 
+gem "devise", "~> 1.4.2"
+
 gem 'responders', "~> 0.6.4"
 gem 'simple_form', '~> 1.4.2'
 gem 'compass', :git => "http://github.com/chriseppstein/compass.git", :branch => "rails31"
@@ -32,6 +34,10 @@ group :development, :test do
   gem "launchy"
   gem "hermes", "~> 0.4.1"
 
+end
+
+group :development do
+  gem 'livereload', :git =>'https://github.com/mockko/livereload.git', :tag => 'v1.3'
 end
 
 # Use unicorn as the web server
