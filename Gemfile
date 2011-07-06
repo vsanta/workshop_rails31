@@ -8,6 +8,7 @@ gem 'rails', '3.1.0.rc4'
 gem 'sqlite3'
 
 gem "devise", "~> 1.4.2"
+gem "carrierwave"
 
 gem 'responders', "~> 0.6.4"
 gem 'simple_form', '~> 1.4.2'
