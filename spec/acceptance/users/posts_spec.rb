@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe "[Users] Posts" do
+  before(:each) do
+    @user = Factory.create(:user)
+    #using password form 'raw' factory so it wont be encrypted
+    sign_user_in_manually(@user, Factory(:user).password)
+  end
   describe "on create" do
     # send a hash after "it" to specify driver. Ex:  :driver => :selenium
     it "should succeed" do
