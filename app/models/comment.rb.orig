@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 class Comment
   include Mongoid::Document
   attr_accessible :body
 
   field :body, :type => String
-  validates_presence_of :body
+
   embedded_in :post
+=======
+class Comment < ActiveRecord::Base
+  belongs_to :post
+  validates_presence_of :body
+>>>>>>> master
 end

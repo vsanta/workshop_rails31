@@ -1,0 +1,6 @@
+<% if @comment.persisted?  %>
+  $("#comments").append(<%= js(render @comment)%>);
+  $("#new_comment textarea").val("");
+<% else %>
+  $("#new_comment").html(<%= js(render :partial => 'posts/comments/form')%>);
+<%end%>

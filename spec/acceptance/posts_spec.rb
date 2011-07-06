@@ -15,5 +15,13 @@ describe "Posts" do
       page.should have_content  "very short post"
 
     end
+
+    it "should fail if invalid data is provided" do
+      visit new_post_path
+
+      click_button "Create Post"
+
+      page.should have_content "Some errors were found, please take a look:"
+    end
   end
 end

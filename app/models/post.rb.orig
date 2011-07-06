@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 class Post
   include Mongoid::Document
   attr_accessible :title, :body
 
   field :title, :type => String
   field :body, :type => String
-  
-  validates_presence_of :title, :body
 
   embeds_many :comments
+=======
+class Post < ActiveRecord::Base
+  has_many :comments
+  validates_presence_of :title, :body
+>>>>>>> master
 end

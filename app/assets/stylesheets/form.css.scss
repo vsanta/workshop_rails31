@@ -1,0 +1,49 @@
+@import "compass/css3/border-radius";
+
+$red-bg: #D99;
+$red-border: #B66;
+.simple_form {
+  label {
+    display: block;
+  }
+  label abbr{
+    color: red;
+  }
+
+  div.input {
+    margin: 12px 0;
+  }
+
+  span.error {
+    @include border-radius();
+    background-color: $red-bg ;
+    border: 1px solid  $red-border;
+    margin-left: 3px;
+    padding: 2px 5px;
+  }
+
+  .field_with_errors{
+    input, textarea {
+      border: 1px solid $red-border;
+    }
+  }
+}
+
+#flash_notice,
+#flash_alert,
+p.error_notification {
+  @include border-radius();
+  border: 1px solid #CCC;
+  padding: 10px;
+}
+
+#flash_notice {
+  background: #9D9;
+  border-color: #6B6;
+}
+
+#flash_alert,
+p.error_notification {
+  background: $red-bg;
+  border-color: $red-border;
+}

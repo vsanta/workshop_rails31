@@ -5,6 +5,7 @@ module AcceptanceExempleGroup
   include Capybara::RSpecMatchers
   include Rails.application.routes.url_helpers
 
+
   included do
     metadata[:type] = :acceptance
   end
