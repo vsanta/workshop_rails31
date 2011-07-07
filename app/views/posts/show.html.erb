@@ -8,8 +8,13 @@
   <b>Body:</b>
   <%= @post.body %>
 </p>
-<h3>Attachments</h3>
 
+<h3>Location</h3>
+<% if @post.has_coordinates? %>
+  <%= image_tag maps_url(@post.lat, @post.lng), :title => @post.location  %>
+<% else %>
+<% end %>
+<h3>Attachments</h3>
 <ul>
   <% @post.attachments.each do |attachment| %>
     <li><%= link_to attachment.name, attachment.attachment.url %></li>

@@ -10,6 +10,9 @@ class Post < ActiveRecord::Base
   scope :recent, order("created_at DESC")
   accepts_nested_attributes_for :attachments, :reject_if => :all_blank
 
+  def has_coordinates?
+    self.lat? && self.lng?
+  end
   def is_author?(author)
     author && self.user == author
   end
