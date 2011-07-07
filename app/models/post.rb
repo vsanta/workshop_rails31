@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :attachments
   belongs_to :user
+  before_save :do_geolocalization, :if => :location_changed?
 
   validates_presence_of :title, :body
   validate :user_id_is_present
@@ -16,6 +17,12 @@ class Post < ActiveRecord::Base
 
   def user_id_is_present
     raise "@post.user is nil" unless user
+  end
+
+  def do_geolocalization
+    self.lat, self.lng = Geocode.get(location) unless location.blank?
+  rescue  Geocode::Error
+    self.lat, self.lng = nil
   end
 
 end

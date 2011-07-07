@@ -36,4 +36,5 @@ RSpec.configure do |config|
   #Define acceptance example group
   config.include AcceptanceExempleGroup
   config.include SignInHelpers, :type => :acceptance
+  config.include GeocodeHelpers
 end
