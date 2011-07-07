@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem "devise", "~> 1.4.2"
 gem "carrierwave", "~> 0.5.4"
+gem "faraday", "~> 0.7.3"
 
 gem 'responders', "~> 0.6.4"
 gem 'simple_form', '~> 1.4.2'
