@@ -8,6 +8,16 @@ describe "[Guests] Comments" do
     before(:each) do
       visit post_path  @post
     end
+    it "should send email to author" do
+      fill_in "My comment", :with => "My First comment"
+      expect{
+        click_button "Create Comment"
+      }.to change(ActionMailer::Base.deliveries, :size).by(1)
+
+      mail = ActionMailer::Base.deliveries.last
+      mail.to.should == [@post.user.email]
+
+    end
     describe "with valid data" do
       before(:each) do
         fill_in "My comment", :with => "My First comment"
@@ -45,6 +55,7 @@ describe "[Guests] Comments" do
         page.should have_content error_message
       end
     end
+
 
   end
 end
