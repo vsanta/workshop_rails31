@@ -21,8 +21,12 @@ describe CommentsNotifier do
     end
 
     it "renders the body" do
-      mail.body.encoded.should match(post.title)
-      mail.body.encoded.should match(comment.body)
+      mail.body.encoded.should match post.title
+      mail.body.encoded.should match comment.body
+    end
+
+    it "renders attachments" do
+      mail.attachments[0].body.encoded.should == comment.body
     end
   end
 
