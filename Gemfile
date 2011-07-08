@@ -42,6 +42,8 @@ end
 group :development do
   gem 'livereload', :git =>'https://github.com/mockko/livereload.git', :tag => 'v1.3'
   gem "metric_fu"
+  gem "ruby-debug"
+  gem "ruby-prof"
   # for query analysis
   #gem "query_reviewer"
 end

@@ -13,10 +13,13 @@
 #end
 
 #HTTP aware controller and lighter than ApplicationController
+require "profiler"
+
 class SlugsController < ActionController::Metal
   include ActionController::Redirecting
   #include Rails.application.routes.url_helpers
-
+  #executes Profiler before action check
+  use Profiler
   def check
     post = Post.find_by_slug!(params[:slug])
     redirect_to "/posts/#{post.id}"
