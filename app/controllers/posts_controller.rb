@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.recent
+    @posts = Post.recent.includes(:user)
     respond_with(@posts)
   end
 
