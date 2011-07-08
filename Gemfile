@@ -35,11 +35,15 @@ group :development, :test do
   gem "autotest-fsevent"
   gem "launchy"
   gem "hermes", "~> 0.4.1"
+  gem "rcov"
 
 end
 
 group :development do
   gem 'livereload', :git =>'https://github.com/mockko/livereload.git', :tag => 'v1.3'
+  gem "metric_fu"
+  # for query analysis
+  #gem "query_reviewer"
 end
 
 # Use unicorn as the web server
