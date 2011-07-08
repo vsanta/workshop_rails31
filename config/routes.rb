@@ -1,6 +1,16 @@
 Workshop::Application.routes.draw do
   devise_for :users
 
+  constraints :subdomain => "c" do
+    #match "/:slug", :to => "slugs#check"
+    match "/:slug" => redirect { | params, request|
+      post = Post.find_by_slug!(params[:slug])
+      port = ":#{request.port}"  unless request.port == 80
+      #back to respond to host with no subdomain
+      "http://#{request.domain}#{port}/posts/#{post.id}"
+    }
+  end
+
   #can point to any rack app. ex: sinatra app.
   #match "/m/:slug", :to => SlugsController.new
   #now using metal. creates a rack app that class action. same as slugs#check. but string has reload
