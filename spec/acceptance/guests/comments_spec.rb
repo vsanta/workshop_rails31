@@ -35,7 +35,7 @@ describe "[Guests] Comments" do
         within @post.comments.last do
           page.should have_content "My First comment"
         end
-        page.should_not have_content success_message
+        page.should have_no_content success_message
         page.should have_css "#new_comment textarea", :text=>""
       end
     end

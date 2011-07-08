@@ -69,8 +69,8 @@ describe "[Users] Posts" do
         end
         #post by someonelse
         within @another_post do
-          page.should_not have_content "Edit"
-          page.should_not have_content "Destroy"
+          page.should have_no_content "Edit"
+          page.should have_no_content "Destroy"
         end
       end
 
