@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :body
   validate :user_id_is_present
+  validates_uniqueness_of :slug, :if => :slug_changed?
 
   scope :recent, order("created_at DESC")
   accepts_nested_attributes_for :attachments, :reject_if => :all_blank
