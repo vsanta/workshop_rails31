@@ -2,7 +2,11 @@ Workshop::Application.routes.draw do
   devise_for :users
 
   #can point to any rack app. ex: sinatra app.
-  match "/m/:slug", :to => SlugsController.new
+  #match "/m/:slug", :to => SlugsController.new
+  #now using metal. creates a rack app that class action. same as slugs#check. but string has reload
+  #match "/m/:slug", :to => SlugsController.action(:check)
+  match "/m/:slug", :to => "slugs#check"
+
   root :to => "posts#index"
 
   resources :posts  do
