@@ -4,3 +4,8 @@ log/*.log
 tmp/
 .sass-cache/
 .autotest
+empty.png
+minus.png
+output.html
+plus.png
+coverage/
