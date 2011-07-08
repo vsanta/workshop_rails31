@@ -2,7 +2,7 @@ Workshop::Application.routes.draw do
   devise_for :users
 
   #can point to any rack app. ex: sinatra app.
-  match "/m/:slug", :to => SlugsController
+  match "/m/:slug", :to => SlugsController.new
   root :to => "posts#index"
 
   resources :posts  do
