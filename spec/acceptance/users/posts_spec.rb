@@ -14,10 +14,12 @@ describe "[Users] Posts" do
 
       fill_in "Title", :with => "First post"
       fill_in "Body", :with => "very short post"
+      fill_in "Slug", :with => "slug_abc"
       click_button "Create Post"
 
       page.should have_content "First post"
       page.should have_content  "very short post"
+      page.should have_content  "slug_abc"
 
     end
 
