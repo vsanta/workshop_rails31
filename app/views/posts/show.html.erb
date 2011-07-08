@@ -19,9 +19,12 @@
 <% end %>
 <h3>Attachments</h3>
 <ul>
-  <% @post.attachments.each do |attachment| %>
-    <li><%= link_to attachment.name, attachment.attachment.url %></li>
-  <% end %>
+  <!--<% cache "attachments_for_post_#{@post.id}" do %>-->
+    <% @post.attachments.each do |attachment| %>
+      <li><%= link_to attachment.name, attachment.attachment.url %></li>
+    <% end %>
+  <!--<% end %>-->
+
 
 </ul>
 
